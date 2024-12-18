@@ -25,35 +25,10 @@ const Services = () => {
     },
   ];
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 150,
-        damping: 10,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 0.6,
-        staggerChildren: 0.4,
-      },
-    },
-  };
-
   return (
-    <div className="container my-16 space-y-4">
+    <div className="container w-full my-16 px-4 space-y-4">
       {/* Header Section */}
-      <div className="text-center mx-auto mx-w-lg space-y-2">
+      <div className="text-center mx-auto max-w-lg space-y-2">
         <motion.h1
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +49,7 @@ const Services = () => {
             type: "spring",
             stiffness: 150,
             damping: 10,
-            delay: 0.6,
+            delay: 0.4,
           }}
           className="text-sm opacity-50 "
         >
@@ -86,28 +61,34 @@ const Services = () => {
 
       {/* Card Section */}
       <motion.div
-        variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.8 }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+        className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3"
       >
         {servicesData.map((service) => (
           <motion.div
             key={service.id}
-            variants={cardVariants}
+            initial={{ opacity: 0, y: 100, }}
+            whileInView={{ opacity: 1, y: 0, }}
+            transition={{
+              type: "spring",
+              stiffness: 150,
+              damping: 10,
+              delay:0.7,
+            }}
             className="text-center p-4 space-y-6"
           >
-            <img
+            <motion.img
               src={service.image}
-              className="img-shadow2 max-w-[200px] mx-auto hover:scale-110 duration-300 cursor-pointer"
-              alt=""
+              className="img-shadow2 max-w-[200px] w-full sm:w-40 mx-auto hover:scale-110 duration-300 cursor-pointer"
+              alt={service.title}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
             <div className="space-y-2">
-              <h1 className="text-2xl font-bold text-primary">
-                {service.title}
-              </h1>
-              <p >{service.subtitle}</p>
+              <h1 className="text-2xl font-bold text-primary">{service.title}</h1>
+              <p className="text-sm">{service.subtitle}</p>
             </div>
           </motion.div>
         ))}

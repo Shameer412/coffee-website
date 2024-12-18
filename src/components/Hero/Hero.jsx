@@ -49,10 +49,10 @@ const Hero = () => {
                   >
                  <div className="relative z-10 space-y-4">
                   <h1 className="text-2xl">Black Lifestyle Lovers,</h1>
-                  <h1 className="text-sm opacity-55 leading-loose">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> 
+                  <h1 className="text-sm opacity-55 leading-loose ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Aspernatur facilis incidunt minus odit quia molestiae 
-                     <br /> numquam, eius vitae maxime!
+                  Lorem, ipsum.
                   </h1>
                 </div>
                 <div className="absolute -top-6 -left-10 w-[250px] h-[180px] bg-gray-700/25"></div>
@@ -121,9 +121,9 @@ const Hero = () => {
                  <div className="relative z-10 space-y-4">
                   <h1 className="text-2xl">Black Tumbler</h1>
                   <h1 className="text-sm opacity-55 leading-loose">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Aspernatur facilis incidunt minus odit quia molestiae 
-                     <br /> numquam, eius vitae maxime!
+                     Lorem, ipsum.
                   </h1>
                 </div>
                 <div className="absolute -top-6 -right-1 w-[250px] h-[180px] bg-darkGray/50"></div>

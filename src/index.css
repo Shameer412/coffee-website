@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Apply Poppins font globally */
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
 @layer utilities {
+  /* Custom utility classes */
   .img-shadow {
     filter: drop-shadow(40px 50px 25px #0f1115);
   }
@@ -16,6 +26,6 @@
   }
 
   .primary-btn {
-    @apply bg-primary text-white px-5 py-2 text-xl  rounded-md hover:bg-primaryDark duration-200;
+    @apply bg-primary text-white px-5 py-2 text-xl rounded-md hover:bg-primaryDark duration-200;
   }
 }
